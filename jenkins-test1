@@ -11,7 +11,7 @@ pipeline {
         }
         stage('call lib method'){
             steps{
-                call()
+                testjenkinslib()
             }
         }
     }
