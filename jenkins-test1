@@ -2,7 +2,7 @@
 library 'test-lib'
 pipeline {
     agent any // 不指定執行 agent
-    enviroment{
+    environment{
         k6script = "${WORKSPACE}/k6script.js"
     }
     stages { // 開始宣告 Pipeline 流程
