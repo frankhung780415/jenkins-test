@@ -19,7 +19,7 @@ pipeline {
         }
         stage('run k6 script test'){
             steps{
-                sh "k6 run ${k6script}"
+                bat "k6 run ${k6script}"
             }
         }
     }
