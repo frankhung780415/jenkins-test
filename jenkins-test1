@@ -19,7 +19,7 @@ pipeline {
         }
         stage('run k6 script test'){
             steps{
-                sh "run k6 ${k6script}"
+                sh "k6 run ${k6script}"
             }
         }
     }
