@@ -23,4 +23,9 @@ pipeline {
             }
         }
     }
+    post {
+        success{
+            archiveArtifacts artifacts: 'summary.html', followSymlinks: false
+        }
+    }
 }
