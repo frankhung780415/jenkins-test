@@ -2,6 +2,9 @@
 library 'test-lib'
 pipeline {
     agent any // 不指定執行 agent
+    enviroment{
+        k6script = "${WORKSPACE}/k6script.js"
+    }
     stages { // 開始宣告 Pipeline 流程
         stage('franktest jenkins scm build') {
             // 行為宣告
@@ -12,6 +15,11 @@ pipeline {
         stage('call lib method'){
             steps{
                 testjenkinslib()
+            }
+        }
+        stage('run k6 script test'){
+            steps{
+                sh "run k6 ${k6script}"
             }
         }
     }
