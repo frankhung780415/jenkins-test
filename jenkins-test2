@@ -7,28 +7,16 @@ pipeline{
     stage('test parameters choice'){
 		parallel{
 			stage('env = sit'){
-				when{
-					expression(params.env=='sit')
-				}
-				steps{
-					echo "parameters choice is sit!!!!"
-				}
+				when{expression(params.env=='sit')}
+				steps{echo "parameters choice is sit!!!!"}
 			}
 			stage('env = uat'){
-				when{
-					expression(params.env=='uat')
-				}
-				steps{
-					echo "parameters choice is uat!!!!"
-				}
+				when{expression(params.env=='uat')}
+				steps{echo "parameters choice is uat!!!!"}
 			}
 			stage('env = prod'){
-				when{
-					expression(params.env=='prod')
-				}
-				steps{
-					echo "parameters choice is prod!!!!"
-				}
+				when{expression(params.env=='prod')}
+				steps{echo "parameters choice is prod!!!!"}
 			}
 		}
     }
