@@ -5,17 +5,32 @@ pipeline{
   }
   stages{
     stage('test parameters choice'){
-      steps{
-        script{
-          if(params.env=='sit'){
-            echo "parameters choice is sit!!!!"
-          } else if(params.env=='uat'){
-            echo "parameters choice is uat!!!!"
-          } else if(params.env=='prod'){
-            echo "parameters choice is prod!!!!"
-          }
-        }
-      }
+		parallel{
+			stage('env = sit'){
+				when{
+					expression(params.env=='sit')
+				}
+				steps{
+					echo "parameters choice is sit!!!!"
+				}
+			}
+			stage('env = uat'){
+				when{
+					expression(params.env=='uat')
+				}
+				steps{
+					echo "parameters choice is uat!!!!"
+				}
+			}
+			stage('env = prod'){
+				when{
+					expression(params.env=='prod')
+				}
+				steps{
+					echo "parameters choice is prod!!!!"
+				}
+			}
+		}
     }
   }
 }
