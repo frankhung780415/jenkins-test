@@ -1,0 +1,21 @@
+pipeline{
+  agent any
+  parameters{
+    choice(name:'env',choices:['sit','uat','prod'])
+  }
+  stages{
+    stage('test parameters choice'){
+      steps{
+        script{
+          if(param.env=='sit'){
+            echo "parameters choice is sit!!!!"
+          } else if(param.env=='uat'){
+            echo "parameters choice is uat!!!!"
+          } else if(param.env=='prod'){
+            echo "parameters choice is prod!!!!"
+          }
+        }
+      }
+    }
+  }
+}
