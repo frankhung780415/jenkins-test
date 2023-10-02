@@ -7,11 +7,11 @@ pipeline{
     stage('test parameters choice'){
       steps{
         script{
-          if(param.env=='sit'){
+          if(params.env=='sit'){
             echo "parameters choice is sit!!!!"
-          } else if(param.env=='uat'){
+          } else if(params.env=='uat'){
             echo "parameters choice is uat!!!!"
-          } else if(param.env=='prod'){
+          } else if(params.env=='prod'){
             echo "parameters choice is prod!!!!"
           }
         }
