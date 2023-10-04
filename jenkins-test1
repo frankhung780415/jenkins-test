@@ -17,15 +17,20 @@ pipeline {
                 testjenkinslib()
             }
         }
-        stage('run k6 script test'){
+        //stage('run k6 script test'){
+        //    steps{
+        //        bat "k6 run ${k6script}"
+        //    }
+        //}
+        stage('get execute status'){
             steps{
-                bat "k6 run ${k6script}"
+                echo "currentBuild.result = ${currentBuild.result}"
             }
         }
     }
-    post {
-        success{
-            archiveArtifacts artifacts: 'summary.html', followSymlinks: false
-        }
-    }
+    //post {
+      //  success{
+        //    archiveArtifacts artifacts: 'summary.html', followSymlinks: false
+        //}
+   // }
 }
