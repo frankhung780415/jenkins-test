@@ -32,8 +32,8 @@ pipeline {
     
     post {
         success{
-            sh "echo currentBuild.result = ${currentBuild.result}"
-            sh "echo currentBuild.result = ${currentBuild.currentResult}"
+            bat "echo currentBuild.result = ${currentBuild.result}"
+            bat "echo currentBuild.result = ${currentBuild.currentResult}"
             //archiveArtifacts artifacts: 'summary.html', followSymlinks: false
         }
     }
