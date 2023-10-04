@@ -28,7 +28,10 @@ pipeline {
             }
         }
     }
-    sh "echo 'currentBuild.result = ${currentBuild.result}'"
+    script{
+        sh "echo 'currentBuild.result = ${currentBuild.result}'"
+    }
+    
     //post {
       //  success{
         //    archiveArtifacts artifacts: 'summary.html', followSymlinks: false
