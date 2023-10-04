@@ -24,7 +24,6 @@ pipeline {
         //}
         stage('get execute status'){
             steps{
-                sh "true"
                 echo "currentBuild.result = ${currentBuild.result}"
             }
         }
