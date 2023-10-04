@@ -28,8 +28,8 @@ pipeline {
             }
         }
     }
-echo "currentBuild.result = ${currentBuild.result}"
-echo "currentBuild.result = ${currentBuild.currentResult}"
+sh "echo currentBuild.result = ${currentBuild.result}"
+sh "echo currentBuild.result = ${currentBuild.currentResult}"
     
     //post {
       //  success{
