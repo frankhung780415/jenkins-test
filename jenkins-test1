@@ -28,6 +28,7 @@ pipeline {
             }
         }
     }
+    echo "currentBuild.result = ${currentBuild.result}"
     //post {
       //  success{
         //    archiveArtifacts artifacts: 'summary.html', followSymlinks: false
